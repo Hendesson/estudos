@@ -1,0 +1,73 @@
+/* 
+SQL básico: SELECT, FROM, WHERE, ORDER BY 
+
+## Conceito 
+
+O sql é uma linguagem capaz de conversar com o banco de dados, 
+você faz uma perfunta e o banco devolve uma tabela.
+
+# Estrutura básica 
+
+```
+SELECT coluna1, coluna2
+FROM tabela
+WHERE condição 
+ORDER BY coluna1;
+```
+
+# ONDE :
+
+SELECT: quais coluna voce quer ver 
+FROM:de qual tabela 
+WHERE: filtro (opcional)
+ORDER BY: ordenacao (opcional)
+
+
+
+-- Exemplo 
+
+```sql 
+SELECT id_alerta, classname 
+data, area_ha 
+FROM dgeo_desnatamento.deter_amazonia_2024_ucs
+WHERE ano = 2024
+ORDER BY area_ha DESC;
+```
+
+
+
+explicação:
+
+SELECT =  esta pegando 4 colunas 
+FROM = da tabela DETER 2024( schema 'dgeo_desmatamento') OBS: 'schema' é uma forma d eorganizar objetos dentro de um banco
+WHERE ano =2024 = somente registros de 2024 
+ORDER BY area_ha DESC`= ordena o area_ha para de maior ao menor desmatamento (DESC = descrecente)
+
+*/
+
+--SELECT * FROM deter_treino
+-- O * seleciona todas as colunas da tabela 
+--Aplicando o exemplo:
+
+/*
+SELECT id_alerta, classname, data, area_ha
+FROM deter_treino
+WHERE ano = 2024
+ORDER BY area_ha DESC;
+
+Exercicio:
+Escreva uma consulta que mostre o `id_alerta`, `nome_uc` e `area_ha` da tabela `deter_treino`,
+filtrando apenas alertas com área maior que 100 hectares, ordenados por data.
+
+*/
+
+SELECT id_alerta, nome_uc, area_ha, data 
+FROM deter_treino
+WHERE area_ha >100
+ORDER BY data
+
+
+
+
+
+
